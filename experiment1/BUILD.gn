@@ -1,0 +1,11 @@
+static_library("Experiment_Stage1") {
+  sources = [
+    "Experiment_Stage1.c",
+  ]
+  include_dirs = [
+    "//commonlibrary/utils_lite/include",
+    "//base/iothardware/peripheral/interfaces/inner_api",
+    "//device/soc/hisilicon/hi3861v100/sdk_liteos/include",
+    "//kernel/liteos_m/kal/cmsis",
+  ]
+}

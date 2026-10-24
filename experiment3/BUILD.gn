@@ -1,0 +1,40 @@
+static_library("Experiment_Stage3") {
+  sources = [
+    "Experiment_Stage3.c",
+    "src/Peripheral.c",
+    "src/hal_bsp_sht20.c",
+    "src/hal_bsp_ap3216c.c",
+    "src/hal_bsp_ssd1306.c",
+    "src/mpu6050.c",
+    "nfc/NT3H.c",
+    "nfc/nfc.c",
+    "nfc/ndef/rtd/nfcForum.c",
+    "nfc/ndef/rtd/rtdText.c",
+    "nfc/ndef/rtd/rtdUri.c",
+    "nfc/ndef/ndef.c",
+    "src/hal_bsp_nfc.c",
+    "src/wifi_connect.c",
+    "src/oc_mqtt.c",
+    "src/oc_mqtt_profile_package.c"
+  ]
+
+  include_dirs = [
+    "//commonlibrary/utils_lite/include",
+    "//base/iothardware/peripheral/interfaces/inner_api",
+    "//device/soc/hisilicon/hi3861v100/sdk_liteos/include",
+    "//kernel/liteos_m/kal/cmsis",
+    "//device/soc/hisilicon/hi3861v100/sdk_liteos/third_party/lwip_sack/include/lwip",
+    "//foundation/communication/wifi_lite/interfaces/wifiservice",
+    "//third_party/cJSON",
+    "//third_party/paho_mqtt/MQTTPacket/src",
+    "//third_party/paho_mqtt/MQTTClient-C/src",
+    "//third_party/paho_mqtt/MQTTClient-C/src/liteOS",
+    "//third_party/paho_mqtt/MQTTPacket/samples",
+    "include",
+    "nfc/ndef",
+    "nfc/ndef/rtd/",
+    "nfc"
+  ]
+
+  deps = ["//third_party/paho_mqtt:pahomqtt_static"]
+}
